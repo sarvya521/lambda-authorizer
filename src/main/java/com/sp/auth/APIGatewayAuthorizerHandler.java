@@ -13,7 +13,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.okta.jwt.Jwt;
 import com.okta.jwt.JwtVerificationException;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.Objects;
@@ -27,6 +28,7 @@ import static com.sp.auth.dto.AuthPolicy.HttpMethod;
  */
 @Slf4j
 public class APIGatewayAuthorizerHandler implements RequestHandler<TokenAuthorizerContext, AuthPolicy> {
+    private static final Logger log = LoggerFactory.getLogger(APIGatewayAuthorizerHandler.class);
     private static final UserDao DAO = new UserDaoImpl();
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();

@@ -11,7 +11,6 @@
             <AppenderRef ref="Lambda"/>
         </Root>
         <Logger name="software.amazon.awssdk" level="WARN" />
-        <Logger name="software.amazon.awssdk.request" level="INFO" />
-        <Logger name="com.sp" level="DEBUG" />
+        <Logger name="software.amazon.awssdk.request" level="DEBUG" />
     </Loggers>
 </Configuration>
